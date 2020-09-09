@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background-color: lightblue;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main{
+  text-align: center;
+  margin: 5%;
+}
+form{
+  margin: 3%;
+}
+.buttonComponent{
+  margin-left: 42%;
+}
+.inputComponent{
+  margin-left: 40%;
+}
+button:hover{
+  filter: brightness(80%);
 }
