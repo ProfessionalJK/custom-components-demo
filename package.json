@@ -2,7 +2,7 @@
   "name": "custom-components-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ProfessionalJK.github.io/custom-components-demo",
+  "homepage": "https://professionaljk.github.io/custom-components-demo",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
