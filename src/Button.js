@@ -11,22 +11,31 @@ function Button({type, state, size, label}){
   if(type === 'Primary'){
     buttonBackground = 'blue'; 
     color = "white";
+    border = "blue";
   } 
-  else if(type === 'Secondary'){
+  else if(type === 'Secondary' || type === 'Cancel'){
     buttonBackground = 'white';
-    border = 'blue';
+    border = 'black';
   }
   else if(type === 'Favourable'){
     buttonBackground = 'green';
     color = "white";
+    border = "green";
+  }
+  else if(type === 'Favourable Secondary'){
+    buttonBackground = 'white';
+    color = "green";
+    border = "green";
   }
   else if(type === 'Destructive'){
     buttonBackground = 'red';
     color = "white";
+    border = "red";
   }
-  else if(type === 'Cancel'){
+  else if(type === 'Destructive Secondary'){
     buttonBackground = 'white';
-    border = 'black';
+    color = "red";
+    border = "red";
   }
 
   if(size === 'Small'){

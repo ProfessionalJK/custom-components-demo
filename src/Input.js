@@ -16,8 +16,8 @@ export default function Input({placeholder, maxLength, size, label}){
       }
     return(
         <div>
-            {label}<br />
-            <input type="text" placeholder={placeholder} maxLength={maxLength} style={{marginTop: '8px', height: inputHeight}}/>
+            <b>{label}</b><br />
+            <input type="text" placeholder={placeholder} maxLength={maxLength} style={{marginTop: '8px', height: inputHeight, borderRadius: '8px', paddingLeft: '8px', borderColor: 'black'}}/>
         </div>
     );
 }
