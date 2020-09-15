@@ -11,13 +11,10 @@ export default function Input({placeholder, maxLength, size, label}){
       else if(size === 'Large'){
         inputHeight = '40px';
       }
-      if(maxLength === ''){
-          maxLength = 10;
-      }
     return(
         <div>
-            <b>{label}</b><br />
-            <input type="text" placeholder={placeholder} maxLength={maxLength} style={{marginTop: '8px', height: inputHeight, borderRadius: '8px', paddingLeft: '8px', borderColor: 'black'}}/>
+            <b>{label}</b>
+            <div style={{padding: '4px'}}><input type="text" placeholder={placeholder} maxLength={maxLength} style={{marginTop: '8px', height: inputHeight, borderRadius: '8px', padding: '8px', borderColor: 'black'}}/></div>
         </div>
     );
 }

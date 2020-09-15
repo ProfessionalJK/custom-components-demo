@@ -5,17 +5,17 @@ import DropDown from './DropDown.js';
 import "./index.css";
 
 function App(){
-  const [buttonType, setButtonType] = useState("Primary");
+  const [buttonType, setButtonType] = useState("primary");
   const [disabled, setDisabled] = useState("false");
-  const [size, setSize] = useState("Small"); 
+  const [size, setSize] = useState("small"); 
   const [buttonLabel, setButtonLabel] = useState("Click"); 
   const [inputPlaceholder, setInputPlaceholder] = useState("");
-  const [inputMaxLength, setInputMaxLenght] = useState(10);
-  const [inputSize, setInputSize] = useState("Small"); 
+  const [inputMaxLength, setInputMaxLenght] = useState();
+  const [inputSize, setInputSize] = useState("small"); 
   const [inputLabel, setInputLabel] = useState("");
   const [dropDownLabel, setDropDownLabel] = useState("");
 
-  const fruits = [
+  const options = [
     {code: "A", label: "Apple", text: "APPLE"},
     {code: "B", label: "Banana", text: "BANANA"},
     {code: "C", label: "Cherry", text: "CHERRY"},
@@ -30,51 +30,49 @@ function App(){
   return(
     <div className="main">
       <h2>Button Component Demo</h2>
-      <form>
-      <label>Button Type</label> <br />
-      <select value={buttonType} onChange={e => setButtonType(e.target.value)} style={{width: '178px', borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
-        <option value="Primary">Primary</option>
-        <option value="Secondary">Secondary</option>
-        <option value="Favourable">Favourable</option>
-        <option value="Favourable Secondary">Favourable Secondary</option>
-        <option value="Destructive">Destructive</option>
-        <option value="Destructive Secondary">Destructive Secondary</option>
-        <option value="Cancel">Cancel</option>
-      </select><br /><br />
-      <label>Button Size</label><br />
-      <select value={size} onChange={e => setSize(e.target.value)} style={{width: '178px', borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
-        <option value="Small">Small</option>
-        <option value="Medium">Medium</option>
-        <option value="Large">Large</option>
-      </select><br /><br />
-      <label>Disabled</label><br />
-      <input type="radio" name='disabled' value="True" onChange={e => setDisabled(e.target.value)}/>True
+      <label>Button Type</label>
+      <div style={{padding: '4px'}}><select value={buttonType} onChange={e => setButtonType(e.target.value)} style={{width: '178px', borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
+        <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
+        <option value="favourable">Favourable</option>
+        <option value="favourable-secondary">Favourable Secondary</option>
+        <option value="destructive">Destructive</option>
+        <option value="destructive-secondary">Destructive Secondary</option>
+        <option value="cancel">Cancel</option>
+      </select></div>
+      <label>Button Size</label>
+      <div style={{padding: '4px'}}><select value={size} onChange={e => setSize(e.target.value)} style={{width: '178px', borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select></div>
+      <label>Disabled</label>
+      <div style={{padding: '4px'}}><input type="radio" name='disabled' value="True" onChange={e => setDisabled(e.target.value)}/>True
       <input type="radio" name='disabled' value="False" onChange={e => setDisabled(e.target.value)}/>False
-      <br /><br />
+      </div>
       <label>Button Label</label><br />
-      <input type="text" onChange={e => setButtonLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}} />
-      </form>
+      <div style={{padding: '4px'}}><input type="text" onChange={e => setButtonLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}} /></div>
       <Button type={buttonType} state={disabled} size={size} label={buttonLabel}/>
 
       <h2>Input Field Component</h2>
-      <label>Palceholder</label><br />
-      <input type="text" value={inputPlaceholder} onChange={e => setInputPlaceholder(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/><br /><br />
-      <label>Max Length</label><br />
-      <input type="number" value={inputMaxLength} onChange={e => setInputMaxLenght(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/><br /><br />
-      <label>Input Size</label><br />
-      <select value={inputSize} onChange={e => setInputSize(e.target.value)} style={{width: '178px',borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
-        <option value="Small">Small</option>
-        <option value="Medium">Medium</option>
-        <option value="Large">Large</option>
-      </select><br /><br />
-      <label>Label</label><br />
-      <input type="text" value={inputLabel} onChange={e => setInputLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/><br /><br />
+      <label>Palceholder</label>
+      <div style={{padding: '4px'}}><input type="text" value={inputPlaceholder} onChange={e => setInputPlaceholder(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/></div>
+      <label>Max Length</label>
+      <div style={{padding: '4px'}}><input type="number" value={inputMaxLength} onChange={e => setInputMaxLenght(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/></div>
+      <label>Input Size</label>
+      <div style={{padding: '4px'}}><select value={inputSize} onChange={e => setInputSize(e.target.value)} style={{width: '178px',borderRadius: '8px', padding: '4px',borderColor: 'black'}}>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select></div>
+      <label>Label</label>
+      <div style={{padding: '4px'}}><input type="text" value={inputLabel} onChange={e => setInputLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/></div>
       <Input placeholder={inputPlaceholder} maxLength={inputMaxLength} size={inputSize} label={inputLabel}/>
 
       <h2>Drop Down Component</h2>
-      <label>Label</label><br />
-      <input type="text" value={dropDownLabel} onChange={e => setDropDownLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/><br /><br />
-      <DropDown options={fruits} label={dropDownLabel}/>
+      <label>Label</label>
+      <div style={{padding: '4px'}}><input type="text" value={dropDownLabel} onChange={e => setDropDownLabel(e.target.value)} style={{borderRadius: '8px', padding: '4px',borderColor: 'black'}}/></div>
+      <DropDown optionArray={options} dropdownLabel={dropDownLabel}/>
     </div>
   );
 }

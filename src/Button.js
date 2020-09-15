@@ -1,59 +1,59 @@
 import React from "react";
 import "./index.css";
 
-function Button({type, state, size, label}){
+function Button({type, disabled, size, label}){
   let buttonBackground;
   let buttonHeight;
   let color = 'black';
   let border = '';
-  let status = state === 'True' ? true : false;
   let labelText = !label? "Click" : label;
-  if(type === 'Primary'){
+  if(type === 'primary'){
     buttonBackground = 'blue'; 
     color = "white";
     border = "blue";
   } 
-  else if(type === 'Secondary' || type === 'Cancel'){
+  else if(type === 'secondary'){
     buttonBackground = 'white';
-    border = 'black';
+    border = 'blue';
   }
-  else if(type === 'Favourable'){
+  else if(type === 'favourable'){
     buttonBackground = 'green';
     color = "white";
     border = "green";
   }
-  else if(type === 'Favourable Secondary'){
+  else if(type === 'favourable-secondary'){
     buttonBackground = 'white';
     color = "green";
     border = "green";
   }
-  else if(type === 'Destructive'){
+  else if(type === 'destructive'){
     buttonBackground = 'red';
     color = "white";
     border = "red";
   }
-  else if(type === 'Destructive Secondary'){
+  else if(type === 'destructive-secondary'){
     buttonBackground = 'white';
     color = "red";
     border = "red";
   }
+  else if(type === 'cancel'){
+    buttonBackground = 'white';
+    border = 'black';
+  }
 
-  if(size === 'Small'){
+  if(size === 'small'){
     buttonHeight = '24px';
   
   }
-  else if(size === 'Medium'){
+  else if(size === 'medium'){
     buttonHeight = '32px';
   }
-  else if(size === 'Large'){
+  else if(size === 'large'){
     buttonHeight = '40px';
-  }
-  const click = () => {
-    alert("Button Type: "+ type + "\nButton Size: " + size + "\nButton Disabled: "+ state);
   }
   return(
     <div>
-      <button type={type} style={{marginTop: '8px', backgroundColor: buttonBackground, borderColor: border, height: buttonHeight, borderRadius: '8px', color: color}} disabled={status} onClick={click}>{labelText}</button>
+      <button type={type} style={{marginTop: '8px', backgroundColor: buttonBackground, borderColor: border, height: buttonHeight, borderRadius: '8px', color: color}} disabled={disabled} >{labelText}</button>
     </div>
   );
 }
